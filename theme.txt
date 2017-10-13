@@ -34,6 +34,8 @@ terminal-border: "0"
   id = "__timeout__"
   # EN
   text = "Booting in %d seconds"
+  # FR
+  # text = "Démarrage automatique dans %d secondes"
   # RU
   # text = "Загрузка выбранного пункта через %d сек."
   color = "#777777"
@@ -48,6 +50,8 @@ terminal-border: "0"
   align = "center"
   # EN
   text = "Use ↑ and ↓ keys to change selection, Enter to confirm"
+  # FR
+  # text = "Choisissez le système avec les flèches du clavier (↑ et ↓), puis validez avec la touche Enter (↲)"
   # RU
   # text = "Используйте клавиши ↑ и ↓ для изменения выбора, Enter для подтверждения"
   color = "#777777"
