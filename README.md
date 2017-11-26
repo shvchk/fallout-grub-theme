@@ -10,5 +10,5 @@
     - Review install script at `/tmp/install.sh`
     - Run it: `sh /tmp/install.sh`
 
-2. **Easier, less secure way** — just download and run script:  
+2. **Easier, less secure way** — just download and run install script:  
     `wget -O - https://github.com/shvchk/poly-light/raw/master/install.sh | sh`
