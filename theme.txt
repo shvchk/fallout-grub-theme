@@ -40,6 +40,8 @@ terminal-border: "0"
   # text = "Загрузка выбранного пункта через %d сек."
   # UA
   # text = "Автоматичне завантаження розпочнеться через %d сек."
+  # PT
+  # text = "Arranque automático dentro de %d segundos"
   color = "#777777"
   font = "Unifont Regular 18"
 }
@@ -58,6 +60,8 @@ terminal-border: "0"
   # text = "Используйте клавиши ↑ и ↓ для изменения выбора, Enter для подтверждения"
   # UA
   # text = "Використовуйте ↑ та ↓ для вибору, Enter для підтвердження"
+  # PT
+  # text = "Use as teclas ↑ e ↓ para mudar a seleção, e ENTER para confirmar"
   color = "#777777"
   font = "Unifont Regular 18"
 }
