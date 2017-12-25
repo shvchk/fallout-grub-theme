@@ -1,5 +1,7 @@
 ## Poly light GRUB theme
 
+Supported languages: English, French, Portuguese, Russian, Ukrainian
+
 ![](https://i.imgur.com/XitFbtv.gif)
 
 ### Installation / update
