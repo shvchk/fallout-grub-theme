@@ -36,6 +36,8 @@ terminal-border: "0"
   text = "Booting in %d seconds"
   # FR
   # text = "Démarrage automatique dans %d secondes"
+  # DE
+  # text = "Start in %d Sekunden."
   # RU
   # text = "Загрузка выбранного пункта через %d сек."
   # UA
@@ -56,6 +58,8 @@ terminal-border: "0"
   text = "Use ↑ and ↓ keys to change selection, Enter to confirm"
   # FR
   # text = "Choisissez le système avec les flèches du clavier (↑ et ↓), puis validez avec la touche Enter (↲)"
+  # DE
+  # text = "System mit ↑ und ↓ auswählen und mit Enter bestätigen."
   # RU
   # text = "Используйте клавиши ↑ и ↓ для изменения выбора, Enter для подтверждения"
   # UA
