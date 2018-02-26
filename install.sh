@@ -1,12 +1,49 @@
-#! /usr/bin/env sh
+#! /usr/bin/env bash
 
 THEME='poly-light'
+LANG='English'
+
+# Pre-authorise sudo
+sudo echo
+
+# Select language, optional
+declare -A LANGS=(
+    [Chinese]=zh_CN
+    [English]=EN
+    [French]=FR
+    [German]=DE
+    [Portuguese]=PT
+    [Russian]=RU
+    [Ukrainian]=UA
+)
+
+LANG_NAMES=($(echo ${!LANGS[*]} | tr ' ' '\n' | sort -n))
+
+PS3='Please select language #: '
+select l in "${LANG_NAMES[@]}"
+do
+    if [[ -v LANGS[$l] ]]
+    then
+        LANG=$l
+        break
+    else
+        echo 'No such language, try again'
+    fi
+done
+
 
 echo 'Fetching theme archive'
 wget https://github.com/shvchk/$THEME/archive/master.zip
 
 echo 'Unpacking theme'
 unzip master.zip
+
+if [[ "$LANG" != "English" ]]
+then
+    echo "Changing language to ${LANG}"
+    sed -i -r -e '/^\s+# EN$/{n;s/^(\s*)/\1# /}' \
+              -e '/^\s+# '"${LANGS[$LANG]}"'$/{n;s/^(\s*)#\s*/\1/}' $THEME-master/theme.txt
+fi
 
 echo 'Creating GRUB themes directory'
 sudo mkdir -p /boot/grub/themes/$THEME
