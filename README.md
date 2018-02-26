@@ -1,6 +1,7 @@
 ## Poly light GRUB theme
 
-Supported languages: English, French, German, Portuguese, Russian, Ukrainian
+Supported languages: English, French, German, Portuguese, Russian, Ukrainian, Simplified-The People's Republic of China
+
 
 ![](https://i.imgur.com/XitFbtv.gif)
 
