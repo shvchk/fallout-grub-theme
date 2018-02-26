@@ -44,6 +44,8 @@ terminal-border: "0"
   # text = "Автоматичне завантаження розпочнеться через %d сек."
   # PT
   # text = "Arranque automático dentro de %d segundos"
+  # zh_CN
+  # text = "在 %d 内启动"
   color = "#777777"
   font = "Unifont Regular 18"
 }
@@ -66,6 +68,8 @@ terminal-border: "0"
   # text = "Використовуйте ↑ та ↓ для вибору, Enter для підтвердження"
   # PT
   # text = "Use as teclas ↑ e ↓ para mudar a seleção, e ENTER para confirmar"
+  # zh_CN
+  # text = "使用 ↑ 和 ↓ 键移动选择条，Enter 键确认"
   color = "#777777"
   font = "Unifont Regular 18"
 }
