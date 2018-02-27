@@ -30,7 +30,7 @@ do
     else
         echo 'No such language, try again'
     fi
-done
+done < /dev/tty
 
 
 echo 'Fetching theme archive'
