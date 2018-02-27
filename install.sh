@@ -15,6 +15,7 @@ declare -A LANGS=(
     [Portuguese]=PT
     [Russian]=RU
     [Ukrainian]=UA
+    [Norwegian]=NO
 )
 
 LANG_NAMES=($(echo ${!LANGS[*]} | tr ' ' '\n' | sort -n))
