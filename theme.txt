@@ -32,22 +32,22 @@ terminal-border: "0"
   width = 100%
   align = "center"
   id = "__timeout__"
+  # DE
+  # text = "Start in %d Sekunden."
   # EN
   text = "Booting in %d seconds"
   # FR
   # text = "Démarrage automatique dans %d secondes"
-  # DE
-  # text = "Start in %d Sekunden."
+  # NO
+  # text = "Starter om %d sekunder"
+  # PT
+  # text = "Arranque automático dentro de %d segundos"
   # RU
   # text = "Загрузка выбранного пункта через %d сек."
   # UA
   # text = "Автоматичне завантаження розпочнеться через %d сек."
-  # PT
-  # text = "Arranque automático dentro de %d segundos"
   # zh_CN
   # text = "在 %d 内启动"
-  # NO
-  # text = "Starter om %d sekunder"
   color = "#777777"
   font = "Unifont Regular 18"
 }
@@ -58,22 +58,22 @@ terminal-border: "0"
   top = 100%-24
   width = 100%
   align = "center"
+  # DE
+  # text = "System mit ↑ und ↓ auswählen und mit Enter bestätigen."
   # EN
   text = "Use ↑ and ↓ keys to change selection, Enter to confirm"
   # FR
   # text = "Choisissez le système avec les flèches du clavier (↑ et ↓), puis validez avec la touche Enter (↲)"
-  # DE
-  # text = "System mit ↑ und ↓ auswählen und mit Enter bestätigen."
+  # NO
+  # text = "Bruk ↑ og ↓ for å endre menyvalg, velg med Enter"
+  # PT
+  # text = "Use as teclas ↑ e ↓ para mudar a seleção, e ENTER para confirmar"
   # RU
   # text = "Используйте клавиши ↑ и ↓ для изменения выбора, Enter для подтверждения"
   # UA
   # text = "Використовуйте ↑ та ↓ для вибору, Enter для підтвердження"
-  # PT
-  # text = "Use as teclas ↑ e ↓ para mudar a seleção, e ENTER para confirmar"
   # zh_CN
   # text = "使用 ↑ 和 ↓ 键移动选择条，Enter 键确认"
-  # NO
-  # text = "Bruk ↑ og ↓ for å endre menyvalg, velg med Enter"
   color = "#777777"
   font = "Unifont Regular 18"
 }
