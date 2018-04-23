@@ -4,7 +4,7 @@ Supported languages: Chinese (simplified), English, French, German, Norwegian, P
 
 ![](https://i.imgur.com/9VBf1Nl.gif)
 
-\* Screenshot is intentionally low res to fit GitHub UI. See also: [1280×720](https://i.imgur.com/HT4ivRY.png), [1920×1080](https://i.imgur.com/n8jBLsj.png)
+Screenshot is intentionally low res to fit GitHub UI. See also: [1280×720](https://i.imgur.com/HT4ivRY.png), [1920×1080](https://i.imgur.com/n8jBLsj.png)
 
 ---
 
