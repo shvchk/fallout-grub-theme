@@ -16,3 +16,10 @@ Supported languages: Chinese (simplified), English, French, German, Norwegian, P
 
 2. **Easier, less secure way** — just download and run install script:  
     `wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash`
+
+---
+
+### See also
+
+- [Poly light GRUB theme](https://github.com/shvchk/poly-light)
+- [Poly dark GRUB theme](https://github.com/shvchk/poly-dark)
