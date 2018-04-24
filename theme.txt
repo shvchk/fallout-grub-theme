@@ -2,7 +2,7 @@
 title-text: ""
 desktop-image: "background.png"
 desktop-color: "#000000"
-terminal-font: "Unifont Regular 18"
+terminal-font: "Fixedsys Regular 32"
 terminal-box: "terminal_box_*.png"
 terminal-left: "0"
 terminal-top: "0"
@@ -16,11 +16,12 @@ terminal-border: "0"
   top = 20%
   width = 70%
   height = 60%
-  item_font = "Unifont Regular 18"
-  item_color = "#777777"
-  selected_item_color = "#444444"
-  item_height = 40
-  item_spacing = 4
+  item_font = "Fixedsys Regular 32"
+  item_color = "#67d97a"
+  selected_item_color = "#ffffff"
+  item_height = 48
+  item_spacing = 8
+  item_icon_space = 12
   item_pixmap_style = "item_*.png"
   selected_item_pixmap_style = "selected_item_*.png"
 }
@@ -28,7 +29,7 @@ terminal-border: "0"
 # Countdown message
 + label {
   left = 0
-  top = 100%-48
+  top = 98%-70
   width = 100%
   align = "center"
   id = "__timeout__"
@@ -48,14 +49,14 @@ terminal-border: "0"
   # text = "Автоматичне завантаження розпочнеться через %d сек."
   # zh_CN
   # text = "在 %d 内启动"
-  color = "#777777"
-  font = "Unifont Regular 18"
+  color = "#67d97a"
+  font = "Fixedsys Regular 32"
 }
 
 # Navigation keys hint 
 + label {
   left = 0
-  top = 100%-24
+  top = 98%-30
   width = 100%
   align = "center"
   # DE
@@ -74,6 +75,6 @@ terminal-border: "0"
   # text = "Використовуйте ↑ та ↓ для вибору, Enter для підтвердження"
   # zh_CN
   # text = "使用 ↑ 和 ↓ 键移动选择条，Enter 键确认"
-  color = "#777777"
-  font = "Unifont Regular 18"
+  color = "#67d97a"
+  font = "Fixedsys Regular 32"
 }

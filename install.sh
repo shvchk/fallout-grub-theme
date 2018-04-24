@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-THEME='poly-light'
+THEME='fallout-grub-theme'
 LANG='English'
 
 # Pre-authorise sudo
