@@ -37,6 +37,8 @@ terminal-border: "0"
   # text = "Start in %d Sekunden."
   # EN
   text = "Booting in %d seconds"
+  # ES
+  # text = "Arranque en% d segundos"
   # FR
   # text = "Démarrage automatique dans %d secondes"
   # NO
@@ -63,6 +65,8 @@ terminal-border: "0"
   # text = "System mit ↑ und ↓ auswählen und mit Enter bestätigen."
   # EN
   text = "Use ↑ and ↓ keys to change selection, Enter to confirm"
+  # ES
+  # text = "Use las teclas ↑ y ↓ para cambiar la selección, Enter para confirmar"
   # FR
   # text = "Choisissez le système avec les flèches du clavier (↑ et ↓), puis validez avec la touche Enter (↲)"
   # NO

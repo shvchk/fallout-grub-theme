@@ -1,6 +1,6 @@
 ## Fallout GRUB theme
 
-Supported languages: Chinese (simplified), English, French, German, Norwegian, Portuguese, Russian, Ukrainian
+Supported languages: Chinese (simplified), English, French, German, Norwegian, Portuguese, Russian, Spanish, Ukrainian
 
 ![](https://i.imgur.com/7LUYwTn.gif)
 

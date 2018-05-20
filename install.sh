@@ -15,6 +15,7 @@ declare -A LANGS=(
     [Norwegian]=NO
     [Portuguese]=PT
     [Russian]=RU
+    [Spanish]=ES
     [Ukrainian]=UA
 )
 
