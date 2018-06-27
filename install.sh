@@ -82,6 +82,9 @@ sudo cp -r ${THEME}-master/* /boot/${GRUB_DIR}/themes/${THEME}
 echo 'Removing other themes from GRUB config'
 sudo sed -i '/^GRUB_THEME=/d' /etc/default/grub
 
+echo 'Making sure GRUB uses graphical output'
+sudo sed -i 's/^\(GRUB_TERMINAL\w*=.*\)/#\1/' /etc/default/grub
+
 echo 'Removing empty lines at the end of GRUB config' # optional
 sudo sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' /etc/default/grub
 
