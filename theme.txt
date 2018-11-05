@@ -38,9 +38,11 @@ terminal-border: "0"
   # EN
   text = "Booting in %d seconds"
   # ES
-  # text = "Arranque en% d segundos"
+  # text = "Arranque en %d segundos"
   # FR
   # text = "Démarrage automatique dans %d secondes"
+  # IT
+  # text = "Avvio in %d secondi"
   # NO
   # text = "Starter om %d sekunder"
   # PT
@@ -69,6 +71,8 @@ terminal-border: "0"
   # text = "Use las teclas ↑ y ↓ para cambiar la selección, Enter para confirmar"
   # FR
   # text = "Choisissez le système avec les flèches du clavier (↑ et ↓), puis validez avec la touche Enter (↲)"
+  # IT
+  # text = "Usa i tasti ↑ e ↓ per cambiare la selezione, premi Invio ↲ per confermare"
   # NO
   # text = "Bruk ↑ og ↓ for å endre menyvalg, velg med Enter"
   # PT

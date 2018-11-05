@@ -3,6 +3,9 @@
 THEME='fallout-grub-theme'
 LANG='English'
 
+# Change to temporary directory
+cd $(mktemp -d)
+
 # Pre-authorise sudo
 sudo echo
 
@@ -12,6 +15,7 @@ declare -A LANGS=(
     [English]=EN
     [French]=FR
     [German]=DE
+    [Italian]=IT
     [Norwegian]=NO
     [Portuguese]=PT
     [Russian]=RU
@@ -53,7 +57,7 @@ if [ -e /etc/os-release ]; then
 
     elif [[ "$ID" =~ (centos|fedora|opensuse) || \
             "$ID_LIKE" =~ (fedora|rhel|suse) ]]; then
-            
+
         GRUB_DIR='grub2'
         UPDATE_GRUB='grub2-mkconfig -o /boot/grub2/grub.cfg'
     fi
@@ -61,10 +65,10 @@ fi
 
 
 echo 'Fetching theme archive'
-wget https://github.com/shvchk/${THEME}/archive/master.zip
+wget -O ${THEME}.zip https://github.com/shvchk/${THEME}/archive/master.zip
 
 echo 'Unpacking theme'
-unzip master.zip
+unzip ${THEME}.zip
 
 if [[ "$LANG" != "English" ]]
 then
@@ -95,7 +99,7 @@ echo 'Adding theme to GRUB config'
 echo "GRUB_THEME=/boot/${GRUB_DIR}/themes/${THEME}/theme.txt" | sudo tee -a /etc/default/grub
 
 echo 'Removing theme installation files'
-rm -rf master.zip ${THEME}-master
+rm -rf ${THEME}.zip ${THEME}-master
 
 echo 'Updating GRUB'
 if [[ $UPDATE_GRUB ]]; then
