@@ -58,8 +58,15 @@ if [ -e /etc/os-release ]; then
     elif [[ "$ID" =~ (centos|fedora|opensuse) || \
             "$ID_LIKE" =~ (fedora|rhel|suse) ]]; then
 
+        GRUB_CFG_PATH='/boot/grub2/grub.cfg'
+
+        if [ -d /boot/efi/EFI/fedora ]
+        then
+            GRUB_CFG_PATH='/boot/efi/EFI/fedora/grub.cfg'
+        fi
+
         GRUB_DIR='grub2'
-        UPDATE_GRUB='grub2-mkconfig -o /boot/grub2/grub.cfg'
+        UPDATE_GRUB="grub2-mkconfig -o $GRUB_CFG_PATH"
     fi
 fi
 
