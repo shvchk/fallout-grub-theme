@@ -37,6 +37,12 @@ do
     fi
 done < /dev/tty
 
+echo 'Fetching theme archive'
+wget -O ${THEME}.zip https://github.com/shvchk/${THEME}/archive/master.zip
+
+echo 'Unpacking theme'
+unzip ${THEME}.zip
+
 # Detect distro and set GRUB location and update method
 GRUB_DIR='grub'
 UPDATE_GRUB=''
@@ -60,22 +66,21 @@ if [ -e /etc/os-release ]; then
 
         GRUB_CFG_PATH='/boot/grub2/grub.cfg'
 
-        if [ -d /boot/efi/EFI/fedora ]
+        if [ -d /boot/efi/EFI/${ID} ]
         then
-            GRUB_CFG_PATH='/boot/efi/EFI/fedora/grub.cfg'
+            GRUB_CFG_PATH="/boot/efi/EFI/${ID}/grub.cfg"
         fi
 
         GRUB_DIR='grub2'
-        UPDATE_GRUB="grub2-mkconfig -o $GRUB_CFG_PATH"
+        UPDATE_GRUB="grub2-mkconfig -o ${GRUB_CFG_PATH}"
+    fi
+
+    # BLS etries have 'kernel' class, copy corresponding icon
+    if [[ -d /boot/loader/entries && -e ${THEME}-master/icons/${ID}.png ]]
+    then
+        cp ${THEME}-master/icons/${ID}.png ${THEME}-master/icons/kernel.png
     fi
 fi
-
-
-echo 'Fetching theme archive'
-wget -O ${THEME}.zip https://github.com/shvchk/${THEME}/archive/master.zip
-
-echo 'Unpacking theme'
-unzip ${THEME}.zip
 
 if [[ "$LANG" != "English" ]]
 then
