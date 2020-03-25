@@ -71,14 +71,14 @@ if [ -e /etc/os-release ]; then
             GRUB_CFG_PATH="/boot/efi/EFI/${ID}/grub.cfg"
         fi
 
+        # BLS etries have 'kernel' class, copy corresponding icon
+        if [[ -d /boot/loader/entries && -e ${THEME}-master/icons/${ID}.png ]]
+        then
+            cp ${THEME}-master/icons/${ID}.png ${THEME}-master/icons/kernel.png
+        fi
+
         GRUB_DIR='grub2'
         UPDATE_GRUB="grub2-mkconfig -o ${GRUB_CFG_PATH}"
-    fi
-
-    # BLS etries have 'kernel' class, copy corresponding icon
-    if [[ -d /boot/loader/entries && -e ${THEME}-master/icons/${ID}.png ]]
-    then
-        cp ${THEME}-master/icons/${ID}.png ${THEME}-master/icons/kernel.png
     fi
 fi
 
