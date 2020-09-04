@@ -28,8 +28,7 @@ LANG_NAMES=($(echo ${!LANGS[*]} | tr ' ' '\n' | sort -n))
 PS3='Please select language #: '
 select l in "${LANG_NAMES[@]}"
 do
-    if [[ -v LANGS[$l] ]]
-    then
+    if [[ -v LANGS[$l] ]]; then
         LANG=$l
         break
     else
@@ -37,17 +36,18 @@ do
     fi
 done < /dev/tty
 
-echo 'Fetching theme archive'
-wget -O ${THEME}.zip https://github.com/shvchk/${THEME}/archive/master.zip
-
-echo 'Unpacking theme'
-unzip ${THEME}.zip
-
 # Detect distro and set GRUB location and update method
 GRUB_DIR='grub'
 UPDATE_GRUB=''
+BOOT_MODE='legacy'
 
-if [ -e /etc/os-release ]; then
+if [[ -d /boot/efi && -d /sys/firmware/efi ]]; then
+    BOOT_MODE='UEFI'
+fi
+
+echo "Boot mode: ${BOOT_MODE}"
+
+if [[ -e /etc/os-release ]]; then
 
     source /etc/os-release
 
@@ -64,26 +64,29 @@ if [ -e /etc/os-release ]; then
     elif [[ "$ID" =~ (centos|fedora|opensuse) || \
             "$ID_LIKE" =~ (fedora|rhel|suse) ]]; then
 
-        GRUB_CFG_PATH='/boot/grub2/grub.cfg'
+        GRUB_DIR='grub2'
+        GRUB_CFG='/boot/grub2/grub.cfg'
 
-        if [ -d /boot/efi/EFI/${ID} ]
-        then
-            GRUB_CFG_PATH="/boot/efi/EFI/${ID}/grub.cfg"
+        if [[ "$BOOT_MODE" = "UEFI" ]]; then
+            GRUB_CFG="/boot/efi/EFI/${ID}/grub.cfg"
         fi
+
+        UPDATE_GRUB="grub2-mkconfig -o ${GRUB_CFG}"
 
         # BLS etries have 'kernel' class, copy corresponding icon
-        if [[ -d /boot/loader/entries && -e ${THEME}-master/icons/${ID}.png ]]
-        then
+        if [[ -d /boot/loader/entries && -e ${THEME}-master/icons/${ID}.png ]]; then
             cp ${THEME}-master/icons/${ID}.png ${THEME}-master/icons/kernel.png
         fi
-
-        GRUB_DIR='grub2'
-        UPDATE_GRUB="grub2-mkconfig -o ${GRUB_CFG_PATH}"
     fi
 fi
 
-if [[ "$LANG" != "English" ]]
-then
+echo 'Fetching theme archive'
+wget -O ${THEME}.zip https://github.com/shvchk/${THEME}/archive/master.zip
+
+echo 'Unpacking theme'
+unzip ${THEME}.zip
+
+if [[ "$LANG" != "English" ]]; then
     echo "Changing language to ${LANG}"
     sed -i -r -e '/^\s+# EN$/{n;s/^(\s*)/\1# /}' \
               -e '/^\s+# '"${LANGS[$LANG]}"'$/{n;s/^(\s*)#\s*/\1/}' ${THEME}-master/theme.txt
