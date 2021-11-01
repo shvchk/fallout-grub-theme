@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
-THEME='fallout-grub-theme'
-LANG='English'
+GRUB_THEME='fallout-grub-theme'
+INSTALLER_LANG='English'
 
 # Change to temporary directory
 cd $(mktemp -d)
@@ -10,7 +10,7 @@ cd $(mktemp -d)
 sudo echo
 
 # Select language, optional
-declare -A LANGS=(
+declare -A INSTALLER_LANGS=(
     [Chinese]=zh_CN
     [English]=EN
     [French]=FR
@@ -23,13 +23,13 @@ declare -A LANGS=(
     [Ukrainian]=UA
 )
 
-LANG_NAMES=($(echo ${!LANGS[*]} | tr ' ' '\n' | sort -n))
+INSTALLER_LANG_NAMES=($(echo ${!INSTALLER_LANGS[*]} | tr ' ' '\n' | sort -n))
 
 PS3='Please select language #: '
-select l in "${LANG_NAMES[@]}"
+select l in "${INSTALLER_LANG_NAMES[@]}"
 do
-    if [[ -v LANGS[$l] ]]; then
-        LANG=$l
+    if [[ -v INSTALLER_LANGS[$l] ]]; then
+        INSTALLER_LANG=$l
         break
     else
         echo 'No such language, try again'
@@ -74,29 +74,29 @@ if [[ -e /etc/os-release ]]; then
         UPDATE_GRUB="grub2-mkconfig -o ${GRUB_CFG}"
 
         # BLS etries have 'kernel' class, copy corresponding icon
-        if [[ -d /boot/loader/entries && -e ${THEME}-master/icons/${ID}.png ]]; then
-            cp ${THEME}-master/icons/${ID}.png ${THEME}-master/icons/kernel.png
+        if [[ -d /boot/loader/entries && -e ${GRUB_THEME}-master/icons/${ID}.png ]]; then
+            cp ${GRUB_THEME}-master/icons/${ID}.png ${GRUB_THEME}-master/icons/kernel.png
         fi
     fi
 fi
 
 echo 'Fetching theme archive'
-wget -O ${THEME}.zip https://github.com/shvchk/${THEME}/archive/master.zip
+wget -O ${GRUB_THEME}.zip https://github.com/shvchk/${GRUB_THEME}/archive/master.zip
 
 echo 'Unpacking theme'
-unzip ${THEME}.zip
+unzip ${GRUB_THEME}.zip
 
-if [[ "$LANG" != "English" ]]; then
-    echo "Changing language to ${LANG}"
+if [[ "$INSTALLER_LANG" != "English" ]]; then
+    echo "Changing language to ${INSTALLER_LANG}"
     sed -i -r -e '/^\s+# EN$/{n;s/^(\s*)/\1# /}' \
-              -e '/^\s+# '"${LANGS[$LANG]}"'$/{n;s/^(\s*)#\s*/\1/}' ${THEME}-master/theme.txt
+              -e '/^\s+# '"${INSTALLER_LANGS[$INSTALLER_LANG]}"'$/{n;s/^(\s*)#\s*/\1/}' ${GRUB_THEME}-master/theme.txt
 fi
 
 echo 'Creating GRUB themes directory'
-sudo mkdir -p /boot/${GRUB_DIR}/themes/${THEME}
+sudo mkdir -p /boot/${GRUB_DIR}/themes/${GRUB_THEME}
 
 echo 'Copying theme to GRUB themes directory'
-sudo cp -r ${THEME}-master/* /boot/${GRUB_DIR}/themes/${THEME}
+sudo cp -r ${GRUB_THEME}-master/* /boot/${GRUB_DIR}/themes/${GRUB_THEME}
 
 echo 'Removing other themes from GRUB config'
 sudo sed -i '/^GRUB_THEME=/d' /etc/default/grub
@@ -111,10 +111,10 @@ echo 'Adding new line to GRUB config just in case' # optional
 echo | sudo tee -a /etc/default/grub
 
 echo 'Adding theme to GRUB config'
-echo "GRUB_THEME=/boot/${GRUB_DIR}/themes/${THEME}/theme.txt" | sudo tee -a /etc/default/grub
+echo "GRUB_THEME=/boot/${GRUB_DIR}/themes/${GRUB_THEME}/theme.txt" | sudo tee -a /etc/default/grub
 
 echo 'Removing theme installation files'
-rm -rf ${THEME}.zip ${THEME}-master
+rm -rf ${GRUB_THEME}.zip ${GRUB_THEME}-master
 
 echo 'Updating GRUB'
 if [[ $UPDATE_GRUB ]]; then
