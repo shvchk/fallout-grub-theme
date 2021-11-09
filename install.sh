@@ -20,6 +20,7 @@ declare -A INSTALLER_LANGS=(
     [Portuguese]=PT
     [Russian]=RU
     [Spanish]=ES
+    [Turkish]=TR
     [Ukrainian]=UA
 )
 
