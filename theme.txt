@@ -49,6 +49,8 @@ terminal-border: "0"
   # text = "Arranque automático dentro de %d segundos"
   # RU
   # text = "Загрузка выбранного пункта через %d сек."
+  # TR
+  # text = "%d saniye sonra önyükleme başlayacak."
   # UA
   # text = "Автоматичне завантаження розпочнеться через %d сек."
   # zh_CN
@@ -79,6 +81,8 @@ terminal-border: "0"
   # text = "Use as teclas ↑ e ↓ para mudar a seleção, e ENTER para confirmar"
   # RU
   # text = "Используйте клавиши ↑ и ↓ для изменения выбора, Enter для подтверждения"
+  # TR
+  # text = "Seçiminizi değiştirmek için ↑ ve ↓ tuşlarını, onaylamak için ise Enter tuşunu kullanabilirsiniz"
   # UA
   # text = "Використовуйте ↑ та ↓ для вибору, Enter для підтвердження"
   # zh_CN
