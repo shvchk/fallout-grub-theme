@@ -3,6 +3,25 @@
 GRUB_THEME='fallout-grub-theme'
 INSTALLER_LANG='English'
 
+# Check dependencies
+INSTALLER_DEPENDENCIES=(
+    'mktemp'
+    'sed'
+    'sort'
+    'sudo'
+    'tee'
+    'tr'
+    'unzip'
+    'wget'
+)
+
+for i in "${INSTALLER_DEPENDENCIES[@]}"; do
+    command -v $i > /dev/null 2>&1 || {
+        echo >&2 "'$i' command is required, but not available. Aborting.";
+        exit 1;
+    }
+done
+
 # Change to temporary directory
 cd $(mktemp -d)
 
@@ -27,8 +46,7 @@ declare -A INSTALLER_LANGS=(
 INSTALLER_LANG_NAMES=($(echo ${!INSTALLER_LANGS[*]} | tr ' ' '\n' | sort -n))
 
 PS3='Please select language #: '
-select l in "${INSTALLER_LANG_NAMES[@]}"
-do
+select l in "${INSTALLER_LANG_NAMES[@]}"; do
     if [[ -v INSTALLER_LANGS[$l] ]]; then
         INSTALLER_LANG=$l
         break
