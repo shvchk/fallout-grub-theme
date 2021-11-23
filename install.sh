@@ -12,9 +12,9 @@ INSTALLER_DEPENDENCIES=(
     'sed'
     'sort'
     'sudo'
+    'tar'
     'tee'
     'tr'
-    'unzip'
     'wget'
 )
 
@@ -58,6 +58,15 @@ select l in "${INSTALLER_LANG_NAMES[@]}"; do
     fi
 done < /dev/tty
 
+echo 'Fetching and unpacking theme'
+wget -O - https://github.com/shvchk/${GRUB_THEME}/archive/master.tar.gz | tar -xzf - --strip-components=1
+
+if [[ "$INSTALLER_LANG" != "English" ]]; then
+    echo "Changing language to ${INSTALLER_LANG}"
+    sed -i -r -e '/^\s+# EN$/{n;s/^(\s*)/\1# /}' \
+              -e '/^\s+# '"${INSTALLER_LANGS[$INSTALLER_LANG]}"'$/{n;s/^(\s*)#\s*/\1/}' theme.txt
+fi
+
 # Detect distro and set GRUB location and update method
 GRUB_DIR='grub'
 UPDATE_GRUB=''
@@ -96,29 +105,17 @@ if [[ -e /etc/os-release ]]; then
         UPDATE_GRUB="grub2-mkconfig -o ${GRUB_CFG}"
 
         # BLS etries have 'kernel' class, copy corresponding icon
-        if [[ -d /boot/loader/entries && -e ${GRUB_THEME}-master/icons/${ID}.png ]]; then
-            cp ${GRUB_THEME}-master/icons/${ID}.png ${GRUB_THEME}-master/icons/kernel.png
+        if [[ -d /boot/loader/entries && -e icons/${ID}.png ]]; then
+            cp icons/${ID}.png icons/kernel.png
         fi
     fi
-fi
-
-echo 'Fetching theme archive'
-wget -O ${GRUB_THEME}.zip https://github.com/shvchk/${GRUB_THEME}/archive/master.zip
-
-echo 'Unpacking theme'
-unzip ${GRUB_THEME}.zip
-
-if [[ "$INSTALLER_LANG" != "English" ]]; then
-    echo "Changing language to ${INSTALLER_LANG}"
-    sed -i -r -e '/^\s+# EN$/{n;s/^(\s*)/\1# /}' \
-              -e '/^\s+# '"${INSTALLER_LANGS[$INSTALLER_LANG]}"'$/{n;s/^(\s*)#\s*/\1/}' ${GRUB_THEME}-master/theme.txt
 fi
 
 echo 'Creating GRUB themes directory'
 sudo mkdir -p /boot/${GRUB_DIR}/themes/${GRUB_THEME}
 
 echo 'Copying theme to GRUB themes directory'
-sudo cp -r ${GRUB_THEME}-master/* /boot/${GRUB_DIR}/themes/${GRUB_THEME}
+sudo cp -r * /boot/${GRUB_DIR}/themes/${GRUB_THEME}
 
 echo 'Removing other themes from GRUB config'
 sudo sed -i '/^GRUB_THEME=/d' /etc/default/grub
@@ -136,7 +133,8 @@ echo 'Adding theme to GRUB config'
 echo "GRUB_THEME=/boot/${GRUB_DIR}/themes/${GRUB_THEME}/theme.txt" | sudo tee -a /etc/default/grub
 
 echo 'Removing theme installation files'
-rm -rf ${GRUB_THEME}.zip ${GRUB_THEME}-master
+rm -rf "$PWD"
+cd
 
 echo 'Updating GRUB'
 if [[ $UPDATE_GRUB ]]; then
