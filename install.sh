@@ -1,5 +1,8 @@
 #! /usr/bin/env bash
 
+set -euo pipefail
+IFS=$'\n\t'
+
 GRUB_THEME='fallout-grub-theme'
 INSTALLER_LANG='English'
 
