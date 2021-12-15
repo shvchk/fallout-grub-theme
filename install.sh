@@ -80,6 +80,8 @@ echo "Boot mode: ${BOOT_MODE}"
 
 if [[ -e /etc/os-release ]]; then
 
+    ID=""
+    ID_LIKE=""
     source /etc/os-release
 
     if [[ "$ID" =~ (debian|ubuntu|solus) || \
