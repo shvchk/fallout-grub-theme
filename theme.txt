@@ -13,11 +13,11 @@ terminal-border: "0"
 # Boot menu
 + boot_menu {
   left = 15%
-  top = 20%
+  top = 30%
   width = 70%
   height = 60%
   item_font = "Fixedsys Regular 32"
-  item_color = "#67d97a"
+  item_color = "#F28000"
   selected_item_color = "#ffffff"
   item_height = 48
   item_spacing = 8
@@ -29,14 +29,14 @@ terminal-border: "0"
 # Countdown message
 + label {
   left = 0
-  top = 98%-70
+  top = 88%-70
   width = 100%
   align = "center"
   id = "__timeout__"
   # DE
   # text = "Start in %d Sekunden."
   # EN
-  text = "Booting in %d seconds"
+  text = "AUTOMATIC BOOT IN %d SECONDS."
   # ES
   # text = "Arranque en %d segundos"
   # FR
@@ -55,20 +55,20 @@ terminal-border: "0"
   # text = "Автоматичне завантаження розпочнеться через %d сек."
   # zh_CN
   # text = "在 %d 内启动"
-  color = "#67d97a"
+  color = "#F28000"
   font = "Fixedsys Regular 32"
 }
 
 # Navigation keys hint 
 + label {
   left = 0
-  top = 98%-30
+  top = 88%-30
   width = 100%
   align = "center"
   # DE
   # text = "System mit ↑ und ↓ auswählen und mit Enter bestätigen."
   # EN
-  text = "Use ↑ and ↓ keys to change selection, Enter to confirm"
+  text = "↑/↓ - NAVIGATE    C - TERMINAL    ⏎ - CONFIRM"
   # ES
   # text = "Use las teclas ↑ y ↓ para cambiar la selección, Enter para confirmar"
   # FR
@@ -87,6 +87,6 @@ terminal-border: "0"
   # text = "Використовуйте ↑ та ↓ для вибору, Enter для підтвердження"
   # zh_CN
   # text = "使用 ↑ 和 ↓ 键移动选择条，Enter 键确认"
-  color = "#67d97a"
+  color = "#F28000"
   font = "Fixedsys Regular 32"
 }
