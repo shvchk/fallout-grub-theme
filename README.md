@@ -9,7 +9,7 @@ Credit to SHazardous for the Background image used. (https://www.nexusmods.com/f
 ### Installation
 
 Copy entire folder to your /boot/grub/themes directory.  
-Edit the /etc/default/grub file with Root permissions and change the #GRUB_THEME= line to #GRUB_THEME=/boot/grub/themes/CRT-Amber/theme.txt  
+Edit the /etc/default/grub file with Root permissions and change the #GRUB_THEME= line to #GRUB_THEME=/boot/grub/themes/crt-amber-theme/theme.txt  
 Run the command sudo update grub  
 Reboot
 
