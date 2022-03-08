@@ -2,7 +2,7 @@
 
 Generic Amber CRT Terminal theme for use with GRUB. Created using Shvchk's Fallout theme as a base.  
 Credit to SHazardous for the Background image used. (https://www.nexusmods.com/fallout4/images/170842)  
-![](https://i.imgur.com/7sPzgDP.gif)  
+![](https://i.imgur.com/NWHYuAj.gif)  
 
 ---
 
