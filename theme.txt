@@ -10,6 +10,39 @@ terminal-width: "100%"
 terminal-height: "100%"
 terminal-border: "0"
 
+# Line 1
++ label {
+  left = 0
+  top = 8%
+  width = 100%
+  align = "center"
+  text = "GNU GRAND UNIFIED BOOTLOADER VER 2.2"
+  color = "#B36400"
+  font = "Fixedsys Regular 32"
+}
+
+# Line 2
++ label {
+  left = 0
+  top = 8%+30 
+  width = 100%
+  align = "center"
+  text = "-Display 1-"
+  color = "#B36400"
+  font = "Fixedsys Regular 32"
+}
+
+# Line 3
++ label {
+  left = 0
+  top = 8%+60
+  width = 100%
+  align = "center"
+  text = "PLEASE SELECT OPERATING SYSTEM TO BOOT:"
+  color = "#B36400"
+  font = "Fixedsys Regular 32"
+}
+
 # Boot menu
 + boot_menu {
   left = 15%
@@ -33,29 +66,8 @@ terminal-border: "0"
   width = 100%
   align = "center"
   id = "__timeout__"
-  # DE
-  # text = "Start in %d Sekunden."
-  # EN
-  text = "AUTOMATIC BOOT IN %d SECONDS."
-  # ES
-  # text = "Arranque en %d segundos"
-  # FR
-  # text = "Démarrage automatique dans %d secondes"
-  # IT
-  # text = "Avvio in %d secondi"
-  # NO
-  # text = "Starter om %d sekunder"
-  # PT
-  # text = "Arranque automático dentro de %d segundos"
-  # RU
-  # text = "Загрузка выбранного пункта через %d сек."
-  # TR
-  # text = "%d saniye sonra önyükleme başlayacak."
-  # UA
-  # text = "Автоматичне завантаження розпочнеться через %d сек."
-  # zh_CN
-  # text = "在 %d 内启动"
-  color = "#F28000"
+  text = "STANDBY FOR AUTOMATIC BOOT IN %d"
+  color = "#B36400"
   font = "Fixedsys Regular 32"
 }
 
@@ -65,28 +77,8 @@ terminal-border: "0"
   top = 88%-30
   width = 100%
   align = "center"
-  # DE
-  # text = "System mit ↑ und ↓ auswählen und mit Enter bestätigen."
   # EN
-  text = "↑/↓ - NAVIGATE    C - TERMINAL    ⏎ - CONFIRM"
-  # ES
-  # text = "Use las teclas ↑ y ↓ para cambiar la selección, Enter para confirmar"
-  # FR
-  # text = "Choisissez le système avec les flèches du clavier (↑ et ↓), puis validez avec la touche Enter (↲)"
-  # IT
-  # text = "Usa i tasti ↑ e ↓ per cambiare la selezione, premi Invio ↲ per confermare"
-  # NO
-  # text = "Bruk ↑ og ↓ for å endre menyvalg, velg med Enter"
-  # PT
-  # text = "Use as teclas ↑ e ↓ para mudar a seleção, e ENTER para confirmar"
-  # RU
-  # text = "Используйте клавиши ↑ и ↓ для изменения выбора, Enter для подтверждения"
-  # TR
-  # text = "Seçiminizi değiştirmek için ↑ ve ↓ tuşlarını, onaylamak için ise Enter tuşunu kullanabilirsiniz"
-  # UA
-  # text = "Використовуйте ↑ та ↓ для вибору, Enter для підтвердження"
-  # zh_CN
-  # text = "使用 ↑ 和 ↓ 键移动选择条，Enter 键确认"
-  color = "#F28000"
+  text = "↑/↓ - NAVIGATE     C - COMMAND     ↲ - CONFIRM"
+  color = "#B36400"
   font = "Fixedsys Regular 32"
 }
