@@ -43,6 +43,8 @@ terminal-border: "0"
   # text = "Démarrage automatique dans %d secondes"
   # IT
   # text = "Avvio in %d secondi"
+  # KO
+  # text = "%d 초 후 부팅됩니다."
   # NO
   # text = "Starter om %d sekunder"
   # PT
@@ -77,6 +79,8 @@ terminal-border: "0"
   # text = "Choisissez le système avec les flèches du clavier (↑ et ↓), puis validez avec la touche Enter (↲)"
   # IT
   # text = "Usa i tasti ↑ e ↓ per cambiare la selezione, premi Invio ↲ per confermare"
+  # KO
+  # text = "↑와 ↓ 키를 눌러 항목을 이동하며, Enter를 눌러 선택합니다."
   # NO
   # text = "Bruk ↑ og ↓ for å endre menyvalg, velg med Enter"
   # PT
