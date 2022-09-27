@@ -43,7 +43,7 @@ terminal-border: "0"
   # text = "Démarrage automatique dans %d secondes"
   # IT
   # text = "Avvio in %d secondi"
-  # EN
+  # KO
   # text = "%d 초 후 부팅됩니다."
   # NO
   # text = "Starter om %d sekunder"
