@@ -57,6 +57,8 @@ terminal-border: "0"
   # text = "Автоматичне завантаження розпочнеться через %d сек."
   # zh_CN
   # text = "在 %d 内启动"
+  # zh_TW
+  # text = "在 %d 內啟動"
   color = "#67d97a"
   font = "Fixedsys Regular 32"
 }
@@ -91,6 +93,8 @@ terminal-border: "0"
   # text = "Використовуйте ↑ та ↓ для вибору, Enter для підтвердження"
   # zh_CN
   # text = "使用 ↑ 和 ↓ 键移动选择条，Enter 键确认"
+  # zh_TW
+  # text = "使用 ↑ 和 ↓ 鍵移動選擇，Enter 鍵繼續"
   color = "#67d97a"
   font = "Fixedsys Regular 32"
 }
