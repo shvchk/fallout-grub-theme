@@ -101,10 +101,10 @@ if [[ -e /etc/os-release ]]; then
             "$ID_LIKE" =~ (fedora|rhel|suse) ]]; then
 
         GRUB_DIR='grub2'
-        GRUB_CFG='/boot/grub2/grub.cfg'
+        GRUB_CFG='/etc/grub2.cfg'
 
         if [[ "$BOOT_MODE" = "UEFI" ]]; then
-            GRUB_CFG="/boot/efi/EFI/${ID}/grub.cfg"
+            GRUB_CFG="/etc/grub2-efi.cfg"
         fi
 
         UPDATE_GRUB="grub2-mkconfig -o ${GRUB_CFG}"
