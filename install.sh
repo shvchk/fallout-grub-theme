@@ -33,7 +33,8 @@ sudo echo
 
 # Select language, optional
 declare -A INSTALLER_LANGS=(
-    [Chinese]=zh_CN
+    [Chinese_simplified]=zh_CN
+    [Chinese_traditional]=zh_TW
     [English]=EN
     [French]=FR
     [German]=DE
