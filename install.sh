@@ -39,6 +39,7 @@ declare -A INSTALLER_LANGS=(
     [French]=FR
     [German]=DE
     [Italian]=IT
+    [Korean]=KO
     [Norwegian]=NO
     [Portuguese]=PT
     [Russian]=RU
