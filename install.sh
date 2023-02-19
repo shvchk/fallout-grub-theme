@@ -41,6 +41,7 @@ declare -A INSTALLER_LANGS=(
     [Italian]=IT
     [Korean]=KO
     [Norwegian]=NO
+    [Polish]=PL
     [Portuguese]=PT
     [Russian]=RU
     [Rusyn]=RUE
