@@ -93,8 +93,8 @@ if [[ -e /etc/os-release ]]; then
 
         UPDATE_GRUB='update-grub'
 
-    elif [[ "$ID" =~ (arch|gentoo) || \
-            "$ID_LIKE" =~ (archlinux|gentoo) ]]; then
+    elif [[ "$ID" =~ (arch|gentoo|manjaro) || \
+            "$ID_LIKE" =~ (archlinux|gentoo|arch) ]]; then
 
         UPDATE_GRUB='grub-mkconfig -o /boot/grub/grub.cfg'
 
