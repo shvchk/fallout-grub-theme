@@ -6,16 +6,30 @@ Supported languages: Chinese (simplified), Chinese (traditional), English, Frenc
 
 ---
 
+
 ### Installation / update
 
-1. **Secure way:**
-    - Download install script:  
-    `wget -P /tmp https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh`
-    - Review install script at `/tmp/install.sh`
-    - Run it: `bash /tmp/install.sh`
+- **Secure way:**
 
-2. **Easier, less secure way** — just download and run install script:  
-    `wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash`
+  - Download install script:
+
+    ```sh
+    wget -P /tmp https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh
+    ```
+
+  - Review it at `/tmp/install.sh`
+
+  - Run it:
+
+    ```sh
+    bash /tmp/install.sh
+    ```
+
+- **Easier, less secure way** — just download and run install script:
+
+  ```sh
+  wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash
+  ```
 
 <br>
 
