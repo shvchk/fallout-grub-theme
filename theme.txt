@@ -2,7 +2,7 @@
 title-text: ""
 desktop-image: "background.png"
 desktop-color: "#000000"
-terminal-font: "Fixedsys Regular 32"
+terminal-font: "NeoDunggeunmo Regular 32"
 terminal-box: "terminal_box_*.png"
 terminal-left: "0"
 terminal-top: "0"
@@ -16,7 +16,7 @@ terminal-border: "0"
   top = 20%
   width = 70%
   height = 60%
-  item_font = "Fixedsys Regular 32"
+  item_font = "NeoDunggeunmo Regular 32"
   item_color = "#67d97a"
   selected_item_color = "#ffffff"
   item_height = 48
@@ -68,7 +68,7 @@ terminal-border: "0"
   # zh_TW
   # text = "在 %d 內啟動"
   color = "#67d97a"
-  font = "Fixedsys Regular 32"
+  font = "NeoDunggeunmo Regular 32"
 }
 
 # Navigation keys hint
@@ -112,5 +112,5 @@ terminal-border: "0"
   # zh_TW
   # text = "使用 ↑ 和 ↓ 鍵移動選擇，Enter 鍵繼續"
   color = "#67d97a"
-  font = "Fixedsys Regular 32"
+  font = "NeoDunggeunmo Regular 32"
 }
