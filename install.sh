@@ -52,17 +52,21 @@ declare -A INSTALLER_LANGS=(
     [Ukrainian]=UA
 )
 
-INSTALLER_LANG_NAMES=($(echo ${!INSTALLER_LANGS[*]} | tr ' ' '\n' | sort -n))
+if [[ ${1:-} == "--lang" && -v 2 && -v INSTALLER_LANGS[$2] ]]; then
+    INSTALLER_LANG=$2
+else
+    INSTALLER_LANG_NAMES=($(echo ${!INSTALLER_LANGS[*]} | tr ' ' '\n' | sort -n))
 
-PS3='Please select language #: '
-select l in "${INSTALLER_LANG_NAMES[@]}"; do
-    if [[ -v INSTALLER_LANGS[$l] ]]; then
-        INSTALLER_LANG=$l
-        break
-    else
-        echo 'No such language, try again'
-    fi
-done < /dev/tty
+    PS3='Please select language #: '
+    select l in "${INSTALLER_LANG_NAMES[@]}"; do
+        if [[ -v INSTALLER_LANGS[$l] ]]; then
+            INSTALLER_LANG=$l
+            break
+        else
+            echo 'No such language, try again'
+        fi
+    done < /dev/tty
+fi
 
 echo 'Fetching and unpacking theme'
 wget -O - https://github.com/shvchk/${GRUB_THEME}/archive/master.tar.gz | tar -xzf - --strip-components=1
