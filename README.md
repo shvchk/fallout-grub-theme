@@ -14,7 +14,7 @@ Supported languages: Chinese (simplified), Chinese (traditional), English, Frenc
   - Download install script:
 
     ```sh
-    wget -P /tmp https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh
+    wget -P /tmp https://github.com/shvchk/fallout-grub-theme/raw/neodgm/install.sh
     ```
 
   - Review it at `/tmp/install.sh`
@@ -28,7 +28,7 @@ Supported languages: Chinese (simplified), Chinese (traditional), English, Frenc
 - **Easier, less secure way** — just download and run install script:
 
   ```sh
-  wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash
+  wget -O - https://github.com/shvchk/fallout-grub-theme/raw/neodgm/install.sh | bash
   ```
 
 <br>
@@ -42,7 +42,7 @@ bash /tmp/install.sh --lang German
 or
 
 ```sh
-wget -O- https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash -s -- --lang Korean
+wget -O- https://github.com/shvchk/fallout-grub-theme/raw/neodgm/install.sh | bash -s -- --lang Korean
 ```
 
 Full list of languages see in `INSTALLER_LANGS` variable in [install.sh](install.sh)
