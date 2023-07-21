@@ -99,8 +99,8 @@ if [[ -e /etc/os-release ]]; then
 
         UPDATE_GRUB='update-grub'
 
-    elif [[ "$ID" =~ (arch|gentoo) || \
-            "$ID_LIKE" =~ (archlinux|gentoo) ]]; then
+    elif [[ "$ID" =~ (arch|gentoo|artix) || \
+            "$ID_LIKE" =~ (^arch|gentoo|^artix) ]]; then
 
         UPDATE_GRUB='grub-mkconfig -o /boot/grub/grub.cfg'
 
@@ -159,7 +159,7 @@ else
     Common ways:
     - Debian, Ubuntu, Solus and derivatives: `update-grub` or `grub-mkconfig -o /boot/grub/grub.cfg`
     - RHEL, CentOS, Fedora, SUSE and derivatives: `grub2-mkconfig -o /boot/grub2/grub.cfg`
-    - Arch, Gentoo and derivatives: `grub-mkconfig -o /boot/grub/grub.cfg`
+    - Arch, Artix, Gentoo and derivatives: `grub-mkconfig -o /boot/grub/grub.cfg`
     --------------------------------------------------------------------------------
     EOF
 fi
