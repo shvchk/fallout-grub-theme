@@ -102,19 +102,13 @@ if [[ -e /etc/os-release ]]; then
     elif [[ "$ID" =~ (arch|gentoo|artix) || \
             "$ID_LIKE" =~ (^arch|gentoo|^artix) ]]; then
 
-        UPDATE_GRUB='grub-mkconfig -o /boot/grub/grub.cfg'
+        UPDATE_GRUB="grub-mkconfig -o /boot/${GRUB_DIR}/grub.cfg"
 
     elif [[ "$ID" =~ (centos|fedora|opensuse) || \
             "$ID_LIKE" =~ (fedora|rhel|suse) ]]; then
 
         GRUB_DIR='grub2'
-        GRUB_CFG='/boot/grub2/grub.cfg'
-
-        if [[ "$BOOT_MODE" = "UEFI" ]]; then
-            GRUB_CFG="/boot/efi/EFI/${ID}/grub.cfg"
-        fi
-
-        UPDATE_GRUB="grub2-mkconfig -o ${GRUB_CFG}"
+        UPDATE_GRUB="grub2-mkconfig -o /boot/${GRUB_DIR}/grub.cfg"
 
         # BLS etries have 'kernel' class, copy corresponding icon
         if [[ -d /boot/loader/entries && -e icons/${ID}.png ]]; then
