@@ -1,6 +1,6 @@
 # Global properties
 title-text: ""
-desktop-image: "background.png"
+desktop-image: "bg.png"
 desktop-color: "#000000"
 terminal-font: "Fixedsys Regular 32"
 terminal-box: "terminal_box_*.png"
@@ -17,8 +17,8 @@ terminal-border: "0"
   width = 70%
   height = 60%
   item_font = "Fixedsys Regular 32"
-  item_color = "#67d97a"
-  selected_item_color = "#ffffff"
+  item_color = "#3b4252"
+  selected_item_color = "#88c0d0"
   item_height = 48
   item_spacing = 8
   item_icon_space = 12
@@ -67,7 +67,7 @@ terminal-border: "0"
   # text = "在 %d 内启动"
   # zh_TW
   # text = "在 %d 內啟動"
-  color = "#67d97a"
+  color = "#5e81ac"
   font = "Fixedsys Regular 32"
 }
 
@@ -111,6 +111,6 @@ terminal-border: "0"
   # text = "使用 ↑ 和 ↓ 键移动选择条，Enter 键确认"
   # zh_TW
   # text = "使用 ↑ 和 ↓ 鍵移動選擇，Enter 鍵繼續"
-  color = "#67d97a"
+  color = "#a3be8c"
   font = "Fixedsys Regular 32"
 }
