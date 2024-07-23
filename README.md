@@ -1,4 +1,6 @@
-## Fallout GRUB theme
+## Nord GRUB theme
+
+Forked and modified from the amazing Fallout GRUB Theme.
 
 Supported languages: Chinese (simplified), Chinese (traditional), English, French, German, Hungarian, Italian, Korean, Latvian, Norwegian, Polish, Portuguese, Russian, Rusyn, Spanish, Turkish, Ukrainian
 
