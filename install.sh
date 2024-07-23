@@ -69,7 +69,7 @@ else
 fi
 
 echo 'Fetching and unpacking theme'
-wget -O - https://github.com/tofuthefirst/${GRUB_THEME}/archive/master.tar.gz | tar -xzf - --strip-components=1
+wget -O - https://github.com/tofuthefirst/${GRUB_THEME}/releases/download/release/nord-grub-theme.tar.gz | tar -xzf - --strip-components=1
 
 if [[ "$INSTALLER_LANG" != "English" ]]; then
     echo "Changing language to ${INSTALLER_LANG}"
