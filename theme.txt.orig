@@ -66,8 +66,13 @@ terminal-border: "0"
   # zh_CN
   # text = "在 %d 内启动"
   # zh_TW
-  # text = "在 %d 秒內啟動"
+<<<<<<< HEAD
+  # text = "在 %d 內啟動"
   color = "#5e81ac"
+=======
+  # text = "在 %d 秒內啟動"
+  color = "#67d97a"
+>>>>>>> 2c51d28701c03c389309e34585ca8ff2b68c23e9
   font = "Fixedsys Regular 32"
 }
 
